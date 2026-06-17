@@ -2,39 +2,33 @@
 
 **Driver Benefit Icon Skill** 是一套用于司机端利益点、奖励营销、基础功能、情感化关怀等场景图标绘制的本地 Skill。
 
-它的目标不是单次生成一张图，而是帮助团队长期保持图标风格统一、语义明确、小尺寸可读。
-
----
-
-## 1. 核心风格
+## 1. 当前核心风格
 
 统一使用：
 
-**Bright Jelly 3D UI Icon Style**  
-**轻透糖胶感 3D 图标风格**
+## Bright Clean 3D UI Icon Style / 明亮清爽 3D UI 图标风格
+
+这版替换掉之前的“果冻感 / 糖胶感 / 半透明软糯感”。
 
 关键词：
 
 ```text
-bright jelly 3D UI icon
-glossy soft 3D illustration
-soft plastic finish
-slightly translucent feel
-rounded geometry
-smooth gradients
-subtle bloom
-gentle edge highlights
-minimal soft shadow
-clean and bright appearance
+bright clean 3D UI icon
+solid rounded volumes
+clear structural edges
+crisp silhouette
+clean highlights
+light shadows
+high-purity colors
+high-lightness warm palette
+readable when enlarged and reduced
 ```
 
 中文理解：
 
 ```text
-明亮 / 干净 / 轻盈 / 圆润 / 软高光 / 浅阴影 / 果冻感 / 糖胶感 / 轻微半透明 / 不写实 / 不扁平 / 小尺寸清晰
+明亮 / 清爽 / 高纯度 / 高明度 / solid / 结构清楚 / 边界清晰 / 干净高光 / 轻阴影 / 不果冻 / 不糖胶 / 不软塌 / 放大精致 / 缩小清晰
 ```
-
----
 
 ## 2. 路线编号
 
@@ -52,77 +46,53 @@ DBI-04 = Emotional Care / 情感化关怀型
 DBI-01 = Benefit Cue / 利益点感知型
 ```
 
-其他路线后续基于统一母风格继续拓展。
+## 3. 色彩与明度基线
 
----
-
-## 3. 资源类型编号
+新增色彩参考：
 
 ```text
-REF = 风格参考 / style reference
-MAT = 材质参考 / material reference
-APP = 已确认图标 / approved icon
-NEG = 反例 / anti-pattern
-EXA = 示例 / example prompt
+DBI-00-MAT-002_v1_high-purity-bright-clean-color-reference.png
 ```
 
-文件命名规则：
+色彩方向：
+
+- 红橘更纯
+- 橙色更亮
+- 黄色更明亮
+- 奶白高光更干净
+- 阴影更轻
+- 暗部更浅
+- 整体更清爽
+
+避免：
+
+- 偏灰橙
+- 脏红
+- 褐橙
+- 土黄
+- 暗金
+- 肉粉感
+- 浑浊渐变
+- 重阴影
+
+## 4. 复杂度控制
 
 ```text
-DBI-{路线编号}-{资源类型}-{序号}_v{版本}_{英文说明}.{后缀}
+主元素：1 个
+辅助元素：默认 1 个，最多 2 个
+点缀元素：默认 0–1 个，最多 2 个
+总语义元素：不超过 3 个
+结构层级：不超过 3 层
 ```
 
-示例：
+核心原则：
 
 ```text
-DBI-00-MAT-001_v1_bright-jelly-material-reference.png
-DBI-01-REF-001_v1_benefit-cue-style-reference.png
-DBI-01-APP-001_v1_ice-fresh-delivery-approved.png
-DBI-02-APP-001_v1_newcomer-reward-approved.png
+切忌元素和分层结构过多过复杂。
+图标必须兼顾放大和缩小两类场景。
 ```
 
----
-
-## 4. Reference 存放规则
-
-```text
-references/
-├─ DBI-00-shared/
-├─ DBI-01-benefit-cue/
-├─ DBI-02-reward-promo/
-├─ DBI-03-basic-function/
-├─ DBI-04-emotional-care/
-└─ index.md
-```
-
-放置原则：
-
-- 如果图片定义整体材质或家族感，放 `DBI-00-shared/`
-- 如果图片定义某一路线的专属风格，放对应路线文件夹
-- 当前成熟的利益点感知型参考图，放 `DBI-01-benefit-cue/`
-- 已确认最终图标用 `APP`
-- 风格参考用 `REF`
-- 材质参考用 `MAT`
-- 反例用 `NEG`
-
----
-
-## 5. 主辅比例
-
-```text
-主元素：约 70%
-辅助元素：约 30%
-```
-
-原则：
-
-- 主元素必须第一眼识别
-- 辅助元素只做语义补充
-- 小尺寸场景优先放大主元素，不要增加元素数量
-
----
-
-## 6. 推荐调用格式
+## 5. 推荐调用格式
 
 ```text
 调用 Driver Benefit Icon Skill
@@ -131,46 +101,34 @@ references/
 参考资源编号：
 业务场景：
 业务语义：
-主物件：
-辅助物件：
-语义强化物件：
+主元素：
+主元素占比：
+辅助元素：
+辅助元素占比：
+点缀元素：
+点缀元素占比：
 主色方向：
 使用位置：
 输出要求：
+复杂度限制：
 必须保留：
 必须避免：
 ```
 
-示例：
+## 6. 标准质感补充语
 
 ```text
-调用 Driver Benefit Icon Skill
-
-风格路线：DBI-01 / Benefit Cue / 利益点感知型
-参考资源编号：DBI-00-MAT-001、DBI-01-REF-001、DBI-01-APP-001
-业务场景：冰鲜专送
-业务语义：冷链、保温、冰鲜商品、配送专业
-主物件：打开的蓝色保温箱
-辅助物件：龙虾
-语义强化物件：冰块、1瓶无品牌啤酒
-主色方向：蓝色为主，橙红点缀
-使用位置：司机端订单标签、配送中提示、服务宣导卡片
-输出要求：透明背景 PNG，1000×1000
-必须保留：轻透糖胶感3D、圆润、软高光、小尺寸清晰
-必须避免：文字、品牌 logo、真实背景、复杂纹理、过多元素
+使用 Bright Clean 3D UI Icon Style / 明亮清爽 3D UI 图标风格。
+材质要明亮、清爽、solid、结构清楚、边界清晰、轻阴影、干净高光。
+去掉果冻感、糖胶感、半透明软糯感。
+图标必须兼顾放大和缩小两类场景。
 ```
 
----
+## 7. 标准颜色补充语
 
-## 7. 质量检查
-
-1. 缩小到 48px 是否还能看懂？
-2. 是否 1 秒内能判断业务语义？
-3. 路线是否选择正确？
-4. 主元素是否约占 70% 视觉权重？
-5. 辅助元素是否约占 30% 且不抢主元素？
-6. 是否没有文字、logo、水印？
-7. 是否和已有图标高光、圆角、体积感一致？
-8. 是否明亮、干净、轻盈，而不是过度写实？
-9. 是否适合当前 UI 承载区域？
-10. 是否可以直接导出透明 PNG 使用？
+```text
+使用高纯度、高明度的干净色彩。
+红橘更纯，黄色更亮，奶白高光更干净。
+减少灰感、脏感、褐橙、脏黄、暗金和浑浊渐变。
+阴影更轻，暗部更浅，整体更亮更清爽。
+```
